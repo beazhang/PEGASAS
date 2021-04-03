@@ -11,7 +11,8 @@ def readMatrix(fin, sample_order, name, outdir):
 	fout=open(outdir+'/refinedBySample.'+fin.split('/')[-1].split('.txt')[0]+'.'+name+'.txt','w')
 	header=''
 	for r in open(fin):
-		header=r.strip().split('\t')[0:8]
+		header=r.strip().split('\t')[0:10]
+		#header=r.strip().split('\t')[0:8]
 		break
 	fout.write('\t'.join(header+sample_order)+'\n')
 	for l in csv.DictReader(open(fin),dialect='excel-tab'):
