@@ -10,7 +10,8 @@ analysis_prefix=unlist(strsplit(tail(unlist(strsplit(signature,'\\/')),1),'\\.so
 matrix1=as.matrix(fread(signature), header=T,skip = 0)
 matrix2=as.matrix(fread(PSImatrix), header=T,skip = 0)
 matrix11=as.matrix(as.numeric(matrix1[,-1]))
-matrix22=apply(matrix2[,c(0:-8)],2,as.numeric)
+matrix22=apply(matrix2[,c(0:-10)],2,as.numeric)
+#matrix22=apply(matrix2[,c(0:-8)],2,as.numeric)
 
 #permutation function
 cor.perm.test <- function(x, y, N=5000, plot=F){
@@ -76,7 +77,8 @@ for (i in 1:nrow(matrix22)){
 }
 dev.off()
 
-cor <- cbind(matrix2[,c(2:8)],cor)
+#cor <- cbind(matrix2[,c(2:8)],cor)
+cor <- cbind(matrix2[,c(2:10)],cor)
 #colnames(cor) <- c("ENSG","Corelation")
 remain <- cbind(correlated,cor_keep,p_keep)
 
