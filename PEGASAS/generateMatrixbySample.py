@@ -15,7 +15,8 @@ def readMatrix(fin, sample_order, name, outdir):
 		break
 	fout.write('\t'.join(header+sample_order)+'\n')
 	for l in csv.DictReader(open(fin),dialect='excel-tab'):
-		key='\t'.join([l['AC'],l['GeneName'],l['chr'],l['strand'],l['exonStart'],l['exonEnd'],l['upstreamEE'],l['downstreamES']])
+		#key='\t'.join([l['AC'],l['GeneName'],l['chr'],l['strand'],l['exonStart'],l['exonEnd'],l['upstreamEE'],l['downstreamES']])
+		key='\t'.join([l['AC'],l['GeneName'],l['chr'],l['strand'],l['longExonStart'],l['longExonEnd'],l['shortES'],l['shortEE'],l['flankingES'],l['flankingEE']])
 		line=key
 		for s in sample_order:
 			line+='\t'+l[s]
