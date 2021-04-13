@@ -56,7 +56,8 @@ for (i in 1:nrow(matrix22)){
       cor_p<-cor.perm.test(matrix11[,1],matrix22[i,])},error=function(e){NA})
     if (!is.na(cor_p) ){
       if (cor_p < 0.0002){# get rid of low samples but high cor events.
-        s_long=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],matrix2[i,7],matrix2[i,8],sep="_")
+        s_long=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],matrix2[i,7],matrix2[i,8],matrix2[i,9],matrix2[i,10],sep="_")
+        #s_long=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],matrix2[i,7],matrix2[i,8],sep="_")
         s_long=paste0(unlist(strsplit(s_long, split=' ', fixed=TRUE)),collapse = "")
         s=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],sep="_")
         s=paste0(unlist(strsplit(s, split=' ', fixed=TRUE)),collapse = "")
@@ -69,7 +70,8 @@ for (i in 1:nrow(matrix22)){
                     xlab=paste(matrix1[1,1],' GSEA Score (K-S statistic)\nPearson\'s corr coef:',round(cor[i],digit=3),
                                '\tp-value:',cor_p_lab,sep=""),
                     ylab='' ,ylim=c(0,1),main=paste(strwrap(s, width = 40), collapse = "\n"),
-                    cex.main=1,cex.lab=0.95, cex.axis=0.8, font.lab=2, font.main=2)
+                    cex.main=1,cex.lab=0.95, cex.axis=0.
+                    , font.lab=2, font.main=2)
         mtext(expression(italic(psi)), side=2, line=2,cex=1.3, font=2)
         abline(lm(matrix22[i,]~matrix11[,1]))
       }
