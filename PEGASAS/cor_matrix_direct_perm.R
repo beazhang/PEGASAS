@@ -59,7 +59,7 @@ for (i in 1:nrow(matrix22)){
         s_long=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],matrix2[i,7],matrix2[i,8],matrix2[i,9],matrix2[i,10],sep="_")
         #s_long=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],matrix2[i,7],matrix2[i,8],sep="_")
         s_long=paste0(unlist(strsplit(s_long, split=' ', fixed=TRUE)),collapse = "")
-        s=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],sep="_")
+        s=paste(matrix2[i,2],matrix2[i,3],matrix2[i,4],matrix2[i,5],matrix2[i,6],matrix2[i,7],matrix2[i,8],sep="_")
         s=paste0(unlist(strsplit(s, split=' ', fixed=TRUE)),collapse = "")
         correlated <- c(correlated,s_long)
         p_keep <- c(p_keep,as.numeric(cor_p))
