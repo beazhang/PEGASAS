@@ -70,8 +70,7 @@ for (i in 1:nrow(matrix22)){
                     xlab=paste(matrix1[1,1],' GSEA Score (K-S statistic)\nPearson\'s corr coef:',round(cor[i],digit=3),
                                '\tp-value:',cor_p_lab,sep=""),
                     ylab='' ,ylim=c(0,1),main=paste(strwrap(s, width = 40), collapse = "\n"),
-                    cex.main=1,cex.lab=0.95, cex.axis=0.
-                    , font.lab=2, font.main=2)
+                    cex.main=1,cex.lab=0.95, cex.axis=0.8, font.lab=2, font.main=2)
         mtext(expression(italic(psi)), side=2, line=2,cex=1.3, font=2)
         abline(lm(matrix22[i,]~matrix11[,1]))
       }
